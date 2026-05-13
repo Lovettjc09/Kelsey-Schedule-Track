@@ -16,10 +16,6 @@ function save(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
 }
 
-function dateKey(date) {
-  return date.toISOString().slice(0, 10)
-}
-
 function ensureDate(store, date) {
   const key = dateKey(date)
   if (!store[key]) {
