@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [claude/ios-task-tracker-app-DYV5d, main]
+    branches: [main]
     paths:
       - 'web/**'
       - '.github/workflows/deploy.yml'
