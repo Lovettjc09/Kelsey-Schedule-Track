@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/unrivaled-fitness-tracker/',
+  base: '/Kelsey-Schedule-Tracker/',
 })
