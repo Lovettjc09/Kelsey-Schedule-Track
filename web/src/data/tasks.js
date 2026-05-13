@@ -14,20 +14,20 @@ export function generateTasksForDate(date) {
 
 function make(title, timeSlot, minutes, freq, date, extra = {}) {
   return {
-    id: `${dateKey(date)}-${title.slice(0, 20).replace(/\s+/g, '-')}`,
+    id: `${toKey(date)}-${title.slice(0, 20).replace(/\s+/g, '-')}`,
     title,
     timeSlot,
     minutes,
     frequency: freq,
     isCompleted: false,
-    assignedDate: dateKey(date),
+    assignedDate: toKey(date),
     isDeferred: false,
     originalDate: null,
     ...extra,
   }
 }
 
-function dateKey(date) {
+function toKey(date) {
   return date.toISOString().slice(0, 10)
 }
 
