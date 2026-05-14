@@ -160,9 +160,9 @@ export default function App() {
         ) : (
           tasks.map(task => (
             <TaskRow
-              key={<task.id>}
+              key={task.id}
               task={task}
-              onToggle={() => store.toggleTask(<task.id>, selectedDate)}
+              onToggle={() => store.toggleTask(task.id, selectedDate)}
             />
           ))
         )}
