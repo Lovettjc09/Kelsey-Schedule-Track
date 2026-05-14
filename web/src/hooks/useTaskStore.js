@@ -96,7 +96,7 @@ export function useTaskStore() {
 
       const deferred = incomplete.map(t => ({
         ...t,
-        id: `${toKey}-deferred-${<t.id>}`,
+        id: `${toKey}-deferred-${t.id}`,
         assignedDate: toKey,
         isDeferred: true,
         originalDate: t.originalDate || fromKey,
