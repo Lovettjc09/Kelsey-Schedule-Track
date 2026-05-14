@@ -68,11 +68,21 @@ export function useTaskStore() {
     })
   }, [update])
 
-  const clearCompleted = useCallback((date) => {
+    const clearCompleted = useCallback((date) => {
     const key = dateKey(date)
+    const cleared = (tasksByDate[key] || []).filter(t => t.isCompleted)
     update(prev => ({
       ...prev,
       [key]: (prev[key] || []).filter(t => t.isCompleted === false),
+    }))
+    return cleared
+  }, [update, tasksByDate])
+
+  const restoreTasks = useCallback((date, tasks) => {
+    const key = dateKey(date)
+    update(prev => ({
+      ...prev,
+      [key]: [...(prev[key] || []), ...tasks],
     }))
   }, [update])
 
@@ -108,7 +118,7 @@ export function useTaskStore() {
     return { completed: all.filter(t => t.isCompleted).length, total: all.length }
   }, [tasksFor])
 
-  return { tasksFor, ensureTasksFor, toggleTask, clearCompleted, moveUncompleted, stats }
+  return { tasksFor, ensureTasksFor, toggleTask, clearCompleted, restoreTasks, moveUncompleted, stats }
 }
 
 export function getMonday(date) {
