@@ -7,7 +7,6 @@ export default function App() {
   const [selectedDate, setSelectedDate] = useState(() => {
     const today = new Date()
     const day = today.getDay()
-    // If weekend, jump to next Monday
     if (day === 0) { today.setDate(today.getDate() + 1) }
     if (day === 6) { today.setDate(today.getDate() + 2) }
     today.setHours(0, 0, 0, 0)
@@ -16,6 +15,7 @@ export default function App() {
   const [weekStart, setWeekStart] = useState(() => getMonday(selectedDate))
   const [showDefer, setShowDefer] = useState(false)
   const [toast, setToast] = useState(null)
+  const [clearedTasks, setClearedTasks] = useState(null)
 
   const store = useTaskStore()
 
@@ -78,7 +78,6 @@ export default function App() {
 
   return (
     <div className="app">
-      {/* Header */}
       <header className="app-header">
         <div className="header-inner">
           <div className="header-title">
@@ -92,7 +91,6 @@ export default function App() {
         </div>
       </header>
 
-      {/* Week strip */}
       <nav className="week-strip">
         <button className="week-nav" onClick={goToPrevWeek} aria-label="Previous week">‹</button>
         <div className="week-days">
@@ -121,14 +119,13 @@ export default function App() {
         <button className="week-nav" onClick={goToNextWeek} aria-label="Next week">›</button>
       </nav>
 
-      {/* Day heading */}
       <div className="day-heading">
         <div>
           <h2>{formatLong(selectedDate)}</h2>
           <p className="day-sub">{completed} of {total} tasks completed</p>
         </div>
-               <div style={{ display: 'flex', gap: 8 }}>
-         {completed > 0 && (
+        <div style={{ display: 'flex', gap: 8 }}>
+          {completed > 0 && (
             <button className="clear-btn" onClick={() => {
               const cleared = store.clearCompleted(selectedDate)
               if (cleared.length > 0) setClearedTasks({ date: selectedDate, tasks: cleared })
@@ -145,10 +142,8 @@ export default function App() {
             </button>
           )}
         </div>
- 
       </div>
 
-      {/* Progress bar */}
       <div className="progress-track">
         <div
           className="progress-fill"
@@ -156,7 +151,6 @@ export default function App() {
         />
       </div>
 
-      {/* Task list */}
       <main className="task-list">
         {tasks.length === 0 ? (
           <div className="empty-state">
@@ -166,15 +160,14 @@ export default function App() {
         ) : (
           tasks.map(task => (
             <TaskRow
-              key={task.id}
+              key={<task.id>}
               task={task}
-              onToggle={() => store.toggleTask(task.id, selectedDate)}
+              onToggle={() => store.toggleTask(<task.id>, selectedDate)}
             />
           ))
         )}
       </main>
 
-      {/* Defer button */}
       {incomplete > 0 && (
         <div className="defer-bar">
           <button className="defer-btn" onClick={() => setShowDefer(true)}>
@@ -183,7 +176,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Defer modal */}
       {showDefer && (
         <DeferModal
           sourceDate={selectedDate}
@@ -193,7 +185,6 @@ export default function App() {
         />
       )}
 
-      {/* Toast */}
       {toast && <div className="toast">{toast}</div>}
     </div>
   )
