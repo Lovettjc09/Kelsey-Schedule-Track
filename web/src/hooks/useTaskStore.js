@@ -61,7 +61,7 @@ export function useTaskStore() {
     const key = dateKey(date)
     update(prev => {
       const tasks = (prev[key] || []).map(t =>
-        <t.id> === taskId ? { ...t, isCompleted: !t.isCompleted } : t
+        t.id === taskId ? { ...t, isCompleted: ! t.isCompleted } : t
       )
       return { ...prev, [key]: tasks }
     })
