@@ -34,7 +34,6 @@ body {
 }
 button { font: inherit; cursor: pointer; border: none; background: none; }
 
-/* ── App Shell ───────────────────────────────────── */
 .app {
   max-width: 640px;
   margin: 0 auto;
@@ -44,7 +43,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   padding-bottom: 80px;
 }
 
-/* ── Header ──────────────────────────────────────── */
 .app-header {
   background: var(--orange);
   color: white;
@@ -54,16 +52,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   z-index: 10;
   box-shadow: 0 2px 8px rgba(249,115,22,.3);
 }
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
+.header-title { display: flex; align-items: center; gap: 10px; }
 .header-icon { font-size: 28px; line-height: 1; }
 .header-title h1 { font-size: 1.1rem; font-weight: 700; line-height: 1.2; }
 .header-title p { font-size: .75rem; opacity: .85; }
@@ -79,7 +69,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .today-btn:hover { background: rgba(255,255,255,.35); }
 
-/* ── Week Strip ──────────────────────────────────── */
 .week-strip {
   display: flex;
   align-items: center;
@@ -101,12 +90,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   transition: background .15s;
 }
 .week-nav:hover { background: var(--border); }
-.week-days {
-  display: flex;
-  flex: 1;
-  justify-content: space-around;
-  gap: 4px;
-}
+.week-days { display: flex; flex: 1; justify-content: space-around; gap: 4px; }
 .day-chip {
   display: flex;
   flex-direction: column;
@@ -128,7 +112,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .day-chip.selected .chip-weekday { color: rgba(255,255,255,.8); }
 .chip-dot { width: 6px; height: 6px; border-radius: 50%; transition: background .3s; }
 
-/* ── Day Heading ─────────────────────────────────── */
 .day-heading {
   display: flex;
   align-items: center;
@@ -160,8 +143,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .unclear-btn:hover { background: #dbeafe; }
 
-
-/* ── Progress Bar ────────────────────────────────── */
 .progress-track {
   height: 4px;
   background: var(--border);
@@ -175,7 +156,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   transition: width .4s ease, background .4s ease;
 }
 
-/* ── Task List ───────────────────────────────────── */
 .task-list {
   display: flex;
   flex-direction: column;
@@ -184,7 +164,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   flex: 1;
 }
 
-/* ── Task Row ────────────────────────────────────── */
 .task-row {
   display: flex;
   align-items: flex-start;
@@ -214,11 +193,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   transition: border-color .2s, background .2s;
   margin-top: 1px;
 }
-.checkbox.checked {
-  background: var(--green);
-  border-color: var(--green);
-  color: white;
-}
+.checkbox.checked { background: var(--green); border-color: var(--green); color: white; }
 .checkbox svg { width: 12px; height: 10px; }
 
 .task-content { flex: 1; min-width: 0; }
@@ -229,10 +204,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   line-height: 1.4;
   word-break: break-word;
 }
-.task-row.completed .task-title {
-  text-decoration: line-through;
-  color: var(--text-muted);
-}
+.task-row.completed .task-title { text-decoration: line-through; color: var(--text-muted); }
 .task-meta {
   display: flex;
   flex-wrap: wrap;
@@ -240,28 +212,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   gap: 6px;
   margin-top: 6px;
 }
-.meta-chip {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-  font-size: .72rem;
-  color: var(--text-muted);
-}
+.meta-chip { display: flex; align-items: center; gap: 3px; font-size: .72rem; color: var(--text-muted); }
 .meta-chip svg { opacity: .7; }
-.freq-badge {
-  font-size: .65rem;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 99px;
-  letter-spacing: .02em;
-}
-.deferred-tag {
-  font-size: .68rem;
-  color: var(--orange);
-  font-weight: 600;
-}
+.freq-badge { font-size: .65rem; font-weight: 700; padding: 2px 7px; border-radius: 99px; letter-spacing: .02em; }
+.deferred-tag { font-size: .68rem; color: var(--orange); font-weight: 600; }
 
-/* ── Empty State ─────────────────────────────────── */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -274,7 +229,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .empty-icon { font-size: 52px; }
 .empty-state p { color: var(--text-muted); font-size: .95rem; }
 
-/* ── Defer Bar ───────────────────────────────────── */
 .defer-bar {
   position: fixed;
   bottom: 0;
@@ -302,7 +256,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .defer-btn:active { background: var(--orange-dark); transform: scale(.98); }
 
-/* ── Modal ───────────────────────────────────────── */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -355,12 +308,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .modal-close:hover { background: var(--border); }
 
 .modal-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 14px; }
-.modal-footer {
-  padding: 12px 20px 20px;
-  display: flex;
-  gap: 10px;
-  border-top: 1px solid var(--border);
-}
+.modal-footer { padding: 12px 20px 20px; display: flex; gap: 10px; border-top: 1px solid var(--border); }
 
 .defer-summary {
   text-align: center;
@@ -378,13 +326,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .field-label { font-size: .78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
 
-.quick-dates {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: none;
-}
+.quick-dates { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
 .quick-dates::-webkit-scrollbar { display: none; }
 .quick-date-btn {
   display: flex;
@@ -398,11 +340,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   transition: border-color .15s, background .15s;
   background: var(--bg);
 }
-.quick-date-btn.active {
-  border-color: var(--orange);
-  background: #fff7ed;
-  color: var(--orange-dark);
-}
+.quick-date-btn.active { border-color: var(--orange); background: #fff7ed; color: var(--orange-dark); }
 @media (prefers-color-scheme: dark) {
   .quick-date-btn.active { background: #431407; color: #fb923c; }
 }
@@ -434,19 +372,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .btn-secondary:hover { background: var(--border); }
 
-.btn-primary {
-  flex: 2;
-  padding: 12px;
-  border-radius: 12px;
-  font-weight: 700;
-  color: white;
-  transition: background .15s, transform .1s;
-}
+.btn-primary { flex: 2; padding: 12px; border-radius: 12px; font-weight: 700; color: white; transition: background .15s, transform .1s; }
 .btn-primary:active { transform: scale(.98); }
 .btn-orange { background: var(--orange); }
 .btn-orange:hover { background: var(--orange-dark); }
 
-/* ── Toast ───────────────────────────────────────── */
 .toast {
   position: fixed;
   top: 80px;
