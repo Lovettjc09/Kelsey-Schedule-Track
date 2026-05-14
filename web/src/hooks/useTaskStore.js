@@ -27,7 +27,6 @@ function ensureDate(store, date) {
 export function useTaskStore() {
   const [tasksByDate, setTasksByDate] = useState(() => {
     const stored = load()
-    // Seed current week
     const today = new Date()
     const monday = getMonday(today)
     const seeded = { ...stored }
@@ -62,13 +61,13 @@ export function useTaskStore() {
     const key = dateKey(date)
     update(prev => {
       const tasks = (prev[key] || []).map(t =>
-        t.id === taskId ? { ...t, isCompleted: !t.isCompleted } : t
+        <t.id> === taskId ? { ...t, isCompleted: !t.isCompleted } : t
       )
       return { ...prev, [key]: tasks }
     })
   }, [update])
 
-    const clearCompleted = useCallback((date) => {
+  const clearCompleted = useCallback((date) => {
     const key = dateKey(date)
     const cleared = (tasksByDate[key] || []).filter(t => t.isCompleted)
     update(prev => ({
@@ -97,7 +96,7 @@ export function useTaskStore() {
 
       const deferred = incomplete.map(t => ({
         ...t,
-        id: `${toKey}-deferred-${t.id}`,
+        id: `${toKey}-deferred-${<t.id>}`,
         assignedDate: toKey,
         isDeferred: true,
         originalDate: t.originalDate || fromKey,
