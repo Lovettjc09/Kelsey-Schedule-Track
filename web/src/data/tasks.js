@@ -33,7 +33,7 @@ function toKey(date) {
 
 function dailyTasks(d) {
   return [
-    make('Mindbody EOD class check (late cancel / no-show cleanup)', '12:30–1:00', 15, 'Daily', d),
+    make('Mindbody EOD class check (late cancel / no-show cleanup)', '12:30–1:00', 30, 'Daily', d),
     make('Social media engagement (respond to comments & DMs)', '12:00–12:15', 15, 'Daily', d),
   ]
 }
@@ -43,7 +43,7 @@ function mondayTasks(d) {
     make('Weekly call with Josh', '9:00–9:30', 30, 'Weekly', d),
     make('Review class schedule; assign coach workouts', '9:30–10:00', 30, 'Weekly', d),
     make('Google Calendar: sub coordination & TBAs', '10:00–10:30', 30, 'Weekly', d),
-    make('Social media post + reel publish', '10:30–11:00', 15, 'Weekly', d),
+    make('Social media post + reel publish', '10:30–11:00', 30, 'Weekly', d),
     make('Challenge participant check-in & motivation', '12:00–12:30', 30, 'Weekly', d),
     make('Fundraiser / challenge coordination', '12:30–1:00', 30, 'Weekly', d),
   ]
@@ -61,11 +61,10 @@ function tuesdayTasks(d) {
 
 function wednesdayTasks(d) {
   return [
-    make('Content Creation: reels/graphics for social', '9:00–9:30', 60, 'Weekly', d),
-    make('Content Creation (continued)', '9:30–10:00', 60, 'Weekly', d),
-    make('Event planning: member mingle, bonding, community', '10:00–10:30', 60, 'Monthly', d),
+    make('Content Creation: reels/graphics for social', '9:00–10:00', 60, 'Weekly', d),
+    make('Event planning: member mingle, bonding, community', '10:00–10:30', 30, 'Monthly', d),
     make('Coach feedback, supplies & improvements check-in', '10:30–11:00', 30, 'Weekly', d),
-    make('Social media engagement & DM responses', '12:00–12:30', 15, 'Weekly', d),
+    make('Social media engagement & DM responses', '12:00–12:30', 30, 'Weekly', d),
   ]
 }
 
@@ -74,17 +73,17 @@ function thursdayTasks(d) {
     make('Mindbody Admin: Expiring contracts & cancellations', '9:00–9:30', 30, 'Weekly', d),
     make('Challenge check-in: participant outreach', '9:30–10:00', 30, 'Weekly', d),
     make('Merch/supply coordination with Carolina Prints', '10:00–10:30', 30, 'Monthly', d),
-    make('Social media post + engagement check', '10:30–11:00', 15, 'Weekly', d),
-    make('Event planning follow-up', '12:00–12:30', 60, 'As Needed', d),
+    make('Social media post + engagement check', '10:30–11:00', 30, 'Weekly', d),
+    make('Event planning follow-up', '12:00–1:00', 60, 'As Needed', d),
   ]
 }
 
 function fridayTasks(d) {
   return [
     make('Weekly recap & Sunday prep notes', '9:00–9:30', 30, 'Weekly', d),
-    make('Social media post scheduling', '9:30–10:00', 60, 'Weekly', d),
-    make('EOW Mindbody check: class attendance cleanup', '10:00–10:30', 15, 'Weekly', d),
+    make('Social media post scheduling', '9:30–10:00', 30, 'Weekly', d),
+    make('EOW Mindbody check: class attendance cleanup', '10:00–10:30', 30, 'Weekly', d),
     make('Admin catch-up / flex time', '10:30–11:00', 30, 'Weekly', d),
-    make('Monthly planning review: month-ahead scheduling', '12:00–12:30', 60, 'Monthly', d),
+    make('Monthly planning review: month-ahead scheduling', '12:00–12:30', 30, 'Monthly', d),
   ]
 }
